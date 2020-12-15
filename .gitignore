@@ -1,0 +1,5 @@
+
+#compiling-output files
+*.o
+*.lst
+*.out
