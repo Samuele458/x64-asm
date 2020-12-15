@@ -3,3 +3,5 @@
 *.o
 *.lst
 *.out
+*.txt
+.gdb_history

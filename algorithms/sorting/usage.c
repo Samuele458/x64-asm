@@ -19,6 +19,7 @@ void shuffle(int *array, size_t n)
 }
 
 extern void bubble_sort( int* v, int size );
+extern void insertion_sort( int* v, int size );
 
 int main( void ) {
 
@@ -36,9 +37,19 @@ int main( void ) {
 		array[i] = i+1;
 	}
 
+
+
 	srand( time( NULL ) );
 	shuffle(array,n);
+	
+	begin = clock();
+	insertion_sort( array, n );
+	end = clock();
+	time_spent = (int)(end - begin);
 
+	printf("Insertion sort time:\t\t\t%d\n", time_spent);
+
+	shuffle(array,n);
 
 	begin = clock();
 	bubble_sort( array, n );
@@ -46,7 +57,6 @@ int main( void ) {
 	time_spent = (int)(end - begin);
 
 	printf("Bubble sort time:\t\t\t%d\n", time_spent);
-
 
 	return 0;
 }
